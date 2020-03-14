@@ -8,7 +8,7 @@ public class Losango extends Poligono {
 	public Losango() {
 		super();
 	}
-
+	
 	@Override
     public double calcularPerimetro() {
         return 4 * getBase();

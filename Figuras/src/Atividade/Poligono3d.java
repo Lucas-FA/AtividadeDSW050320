@@ -6,36 +6,48 @@ public abstract class Poligono3d {
 	private double profundidade;
 	
 	public Poligono3d(double base, double altura, double profundidade) {
-		this.base = base;
-		this.altura = altura;
-		this.profundidade = profundidade;
+		setBase(base);
+		setAltura(altura);
+		setProfundidade(profundidade);
 	}
 
 	public Poligono3d() {
-		this.base = 0;
-		this.altura = 0;
-		this.profundidade = 0;
+		setBase(1);
+		setAltura(1);
+		setProfundidade(1);
 	}
 	
 	public double getBase() {
 		return base;
 	}
 	public void setBase(double base) {
-		this.base = base;
+		if (base <= 0) {
+			System.out.println("O valor não pode ser menor ou igual a 0");
+		}
+		else
+			this.base = base;
 	}
 
 	public double getAltura() {
 		return altura;
 	}
 	public void setAltura(double altura) {
-		this.altura = altura;
+		if (altura <= 0) {
+			System.out.println("O valor não pode ser menor ou igual a 0");
+		}
+		else
+			this.altura = altura;
 	}
 
 	public double getProfundidade() {
 		return profundidade;
 	}
 	public void setProfundidade(double profundidade) {
-		this.profundidade = profundidade;
+		if (profundidade <= 0) {
+			System.out.println("O valor não pode ser menor ou igual a 0");
+		}
+		else
+			this.profundidade = profundidade;
 	}
 
 	public abstract double calcularVolume();
